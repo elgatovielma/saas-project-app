@@ -4,6 +4,7 @@ class Tenant < ActiveRecord::Base
   has_many :members, dependent: :destroy
   has_many :projects, dependent: :destroy
   has_one :payment
+  # This allow the parent (Tenant) to change attributes in the child (Payment)
   accepts_nested_attributes_for :payment
   
   def can_create_projects?

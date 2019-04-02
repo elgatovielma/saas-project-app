@@ -1,6 +1,6 @@
 // function to get params from URL
 
-function GetURLParameter(sParam) {
+GetURLParameter = (sParam) => {
   var sPageURL = window.location.search.substring(1);
   var sURLVariables = sPageURL.split('&');
   for (var i = 0; i < sURLVariables.length; i++)
@@ -12,6 +12,7 @@ function GetURLParameter(sParam) {
     }
   }
 };
+
 
 $(document).ready(function () {
   

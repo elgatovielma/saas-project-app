@@ -146,13 +146,13 @@ class RegistrationsController < Milia::RegistrationsController
         else
           set_flash_message :notice, :"signed_up_but_#{resource.inactive_message}" if is_flashing_format?
           expire_data_after_sign_in!
-          respond_with resource, :location => after_inactive_sign_up_path_for(resource)
+          respond_with resource, :location => after_inactive_sign_up_path_for(resource) 
         end
       else
         clean_up_passwords resource
         log_action( "devise: signup user failure", resource )
         prep_signup_view(  @tenant, resource, params[:coupon] )   
-        respond_with resource
+        respond_with resource and return
       end
     end
 

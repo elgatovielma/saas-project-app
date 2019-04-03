@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 
   acts_as_universal_and_determines_account
@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
   def is_admin?
     is_admin
   end
-
+  
 end
